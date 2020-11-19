@@ -15,6 +15,9 @@ class AddStatusFieldToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('status')->nullable();
+            $table->integer('post_id');
+            $table->text('image');
+            $table->softDeletes();
         });
     }
 

@@ -17,10 +17,22 @@
       <span>Dashboard</span></a>
   </li>
 
+    <li class="nav-item">
+    <a class="nav-link" href="{{url('profil')}}">
+      <i class="fas fa-fw fa-user"></i>
+      <span>MyProfil</span></a>
+  </li>
+
+ 
   <li class="nav-item">
     <a class="nav-link" href="{{url('posts')}}">
       <i class="fas fa-fw fa-mail-bulk"></i>
       <span>Post</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url('jobs')}}">
+      <i class="fas fa-fw fa-mail-bulk"></i>
+      <span>Jobs</span></a>
   </li>
 
   <li class="nav-item">
@@ -28,6 +40,7 @@
       <i class="fas fa-fw fa-mail-bulk"></i>
       <span>Galleries</span></a>
   </li>
+
 
   <li class="nav-item">
     <a class="nav-link" href="{{url('status', Auth::user()->id)}}">

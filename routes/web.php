@@ -21,15 +21,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index');
 Route::get('/front/{front}','FrontController@show');
+
 // Route::get('/frontend/{id}/','FrontController@show');
 
-Route::middleware('auth','admin')
+Route::middleware('auth')
         ->group(function () {
+
             Route::get('/dashboard', 'DashboardController@index'); 
             Route::get('/status/{status}', 'StatusController@index'); 
-            Route::resource('posts', 'PostController');
-            Route::resource('jobs', 'JobController');
-            Route::resource('gallery', 'GalleryController');
+            Route::resource('posts', 'PostController')->middleware('admin');
+            Route::resource('jobs', 'JobController')->middleware('admin');
+            Route::resource('gallery', 'GalleryController')->middleware('admin');
+            Route::resource('profil', 'ProfilController')->middleware('admin');
 
         });
 

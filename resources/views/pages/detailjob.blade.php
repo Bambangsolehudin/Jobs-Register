@@ -23,7 +23,7 @@
 			    <p class="card-text text-muted">oleh : {{$item->user->name}}</p>
 			    </div>
 			    <div class="text-center">
-			    	<a href="#" class="btn btn-primary">Apply</a>
+			    	<a href="{{route('register')}}" class="btn btn-primary">Join</a>
 			    </div>
 			  </div>
 			</div>

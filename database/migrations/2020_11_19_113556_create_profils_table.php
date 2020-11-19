@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateProfilsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('profils', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->integer('job_id');
+            $table->string('NIK');
+            $table->string('pendidikan_terakhir');
+            $table->string('kampus');
+            $table->softDeletes();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('profils');
+    }
+}
